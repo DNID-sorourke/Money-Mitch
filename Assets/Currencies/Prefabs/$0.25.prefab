@@ -198,8 +198,8 @@ MonoBehaviour:
     m_PreInfinity: 0
     m_PostInfinity: 0
     m_RotationOrder: 4
-  XMovementSpeed: 2
-  YDistanceScalar: 2
+  XMovementSpeed: 5
+  YDistanceScalar: 5
   _rb: {fileID: 5078424309532817630}
   _startPos: {x: 0, y: 0, z: 0}
 --- !u!114 &5078424309532817625
@@ -226,8 +226,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.00953
-  m_Center: {x: 0, y: 0, z: 0.00075999997}
+  m_Radius: 0.18
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5078424309532817630
 Rigidbody:
   m_ObjectHideFlags: 0
