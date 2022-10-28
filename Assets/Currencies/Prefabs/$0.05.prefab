@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.1
-  m_fontSizeBase: 0.1
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -164,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 3445538033779194769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.66, y: -0.172, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 0.835, y: 0.835, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2842242666880463405}
@@ -235,6 +235,7 @@ MonoBehaviour:
   XMovementSpeed: 2
   YDistanceScalar: 2
   _rb: {fileID: 3445538033779194773}
+  _startPos: {x: 0, y: 0, z: 0}
 --- !u!114 &3445538033779194770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,11 +392,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b046d7eb9e0f73a448b0dfc3c1d82865, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b046d7eb9e0f73a448b0dfc3c1d82865, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b046d7eb9e0f73a448b0dfc3c1d82865, type: 3}
       propertyPath: m_LocalPosition.x

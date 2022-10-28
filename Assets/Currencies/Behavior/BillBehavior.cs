@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class BillBehavior : MonoBehaviour
 {
+    public AnimationCurve VelocityCurve;
     [SerializeField] private float _movementSpeed;
     [SerializeField] private Rigidbody _rb;
+    private float t;
 
     private void FixedUpdate()
     {
-        _rb.velocity = new Vector2(_movementSpeed, 0);
+        t += Time.deltaTime;
+        _rb.velocity = new Vector2(VelocityCurve.Evaluate(t) * _movementSpeed, 0);
     }
 
 }
