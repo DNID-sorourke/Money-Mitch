@@ -5,35 +5,36 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float MovementSpeed;
-    public VirtualJoystick Joystick;
-    public Rigidbody2D rb;
     public AnimationCurve AccelerationCurve;
-    public float accelCurveX;
+    [SerializeField] private float _timeAcceleracting;
 
-    private void Update()
+    [SerializeField] private VirtualJoystick _joystick;
+    [SerializeField] private Rigidbody _rb;
+
+    private void FixedUpdate()
     {
-        if (Joystick.InputDirection.magnitude > 0)
+        if (_joystick.InputDirection.magnitude > 0)
         {
             Move();
-            if (accelCurveX < 1)
+            if (_timeAcceleracting < 1)
             {
-                accelCurveX += Time.deltaTime;
+                _timeAcceleracting += Time.deltaTime;
             }
             else
             {
-                accelCurveX = 1;
+                _timeAcceleracting = 1;
             }
         }
         else
         {
-            accelCurveX = 0;
+            _timeAcceleracting = 0;
         }
     }
 
     private void Move()
     {
-        rb.velocity = new Vector2(Joystick.InputDirection.x, Joystick.InputDirection.y) 
+        _rb.velocity = new Vector2(_joystick.InputDirection.x, _joystick.InputDirection.y) 
             * MovementSpeed 
-            * AccelerationCurve.Evaluate(accelCurveX);
+            * AccelerationCurve.Evaluate(_timeAcceleracting);
     }
 }
