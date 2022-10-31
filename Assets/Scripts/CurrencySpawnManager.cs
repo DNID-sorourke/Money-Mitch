@@ -27,7 +27,6 @@ public class CurrencySpawnManager : MonoBehaviour
     private void SpawnWave()
     {
         int waveSize = Random.Range(WaveSizeMinimum, WaveSizeMaximum);
-        Debug.Log("Rolled Wave Size = " + waveSize);
 
         for (int i = 0; i < waveSize; i++)
         {
@@ -41,7 +40,6 @@ public class CurrencySpawnManager : MonoBehaviour
         float spawnY = Random.Range(_spawnArea.bounds.min.y, _spawnArea.bounds.max.y);
 
         int currencyIdx = Random.Range(0, _allCurrencies.Length);
-        Debug.Log("Spawning " + currencyIdx + " at " + spawnX + "," + spawnY);
 
         Instantiate(_allCurrencies[currencyIdx], new Vector3(spawnX, spawnY, 0), Quaternion.identity);
     }
