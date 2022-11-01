@@ -6,5 +6,5 @@ using UnityEngine;
 public class CurrencyData : ScriptableObject
 {
     public CurrencyType Type;
-    [SerializeField] public SerializableDecimal Value;
+    public SerializableDecimal Value;
 }

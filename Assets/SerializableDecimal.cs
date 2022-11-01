@@ -4,11 +4,9 @@ using System.Collections;
 [System.Serializable]
 public class SerializableDecimal : ISerializationCallbackReceiver
 {
-    [HideInInspector] public decimal value;
+    public decimal value;
     [SerializeField]
     private int[] data;
-
-    //[SerializeField] private string inspectorField = "0";
 
     public void OnBeforeSerialize()
     {
