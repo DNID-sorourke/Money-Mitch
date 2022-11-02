@@ -22,6 +22,28 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
         knob = transform.GetChild(0).GetComponent<Image>();
     }
 
+    private void Update()
+    {
+        // move the joystick if the input position is outside the joystick's bounds
+        if (Input.touchCount == 1 && Input.touches[0].phase == TouchPhase.Began)
+        {
+            if (!this.GetComponent<Image>().rectTransform.rect.Contains(Input.touches[0].position))
+                this.transform.position = Input.touches[0].position;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Mouse position: " + Input.mousePosition);
+            Debug.Log(this.GetComponent<Image>().transform.position);
+            Debug.Log("Image rect: " + this.GetComponent<Image>().rectTransform.rect);
+
+            if (!this.GetComponent<Image>().rectTransform.rect.Contains(Input.mousePosition))
+            {
+                this.transform.position = Input.mousePosition;
+                Debug.Log("outside rect");
+            }
+        }
+    }
+
     /// <summary>
     /// Drag the knob of the joystick.
     /// </summary>
